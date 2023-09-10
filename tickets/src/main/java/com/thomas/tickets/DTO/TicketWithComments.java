@@ -1,32 +1,29 @@
-package com.thomas.tickets.model;
+package com.thomas.tickets.DTO;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.thomas.tickets.enums.TicketCategory;
 import com.thomas.tickets.enums.TicketStatus;
-import jakarta.persistence.*;
+import com.thomas.tickets.model.Comment;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+@Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ticket {
+public class TicketWithComments {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createdDate;
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime modifiedDate;
 
     private String title;
@@ -37,10 +34,10 @@ public class Ticket {
 
     private String body;
 
-    @Enumerated(EnumType.ORDINAL)
     private TicketCategory ticketCategory;
 
-    @Enumerated(EnumType.ORDINAL)
     private TicketStatus ticketStatus;
 
+    private List<Comment> listOfComments;
 }
+
