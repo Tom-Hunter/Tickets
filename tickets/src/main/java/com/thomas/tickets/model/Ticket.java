@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.thomas.tickets.enums.PriorityLevel;
 import com.thomas.tickets.enums.TicketCategory;
 import com.thomas.tickets.enums.TicketStatus;
 import jakarta.persistence.*;
@@ -30,6 +31,9 @@ public class Ticket {
     private LocalDateTime modifiedDate;
 
     private String title;
+
+    @Enumerated(EnumType.STRING)
+    private PriorityLevel priorityLevel;
 
     private int owneruserId;
 

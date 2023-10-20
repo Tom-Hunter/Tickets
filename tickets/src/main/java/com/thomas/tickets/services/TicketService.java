@@ -63,6 +63,7 @@ public class TicketService {
         ticketWithComments.setModifiedDate(ticketBeforeUpdate.getModifiedDate());
         ticketWithComments.setTitle(ticketBeforeUpdate.getTitle());
         ticketWithComments.setBody(ticketBeforeUpdate.getBody());
+        ticketWithComments.setPriorityLevel(ticketBeforeUpdate.getPriorityLevel());
         ticketWithComments.setOwneruserId(ticketBeforeUpdate.getOwneruserId());
         ticketWithComments.setAssigneduserId(ticketBeforeUpdate.getAssigneduserId());
         ticketWithComments.setTicketCategory(ticketBeforeUpdate.getTicketCategory());
@@ -134,6 +135,7 @@ public class TicketService {
         /// Update the Ticket using Getters and Setters
         ticketBeforeUpdate.setTitle(ticket.getTitle());
         ticketBeforeUpdate.setBody(ticket.getBody());
+        ticketBeforeUpdate.setPriorityLevel(ticket.getPriorityLevel());
         ticketBeforeUpdate.setOwneruserId(ticket.getOwneruserId());
         ticketBeforeUpdate.setTicketCategory(ticket.getTicketCategory());
         ticketBeforeUpdate.setTicketStatus(ticket.getTicketStatus());
